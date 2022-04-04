@@ -1,20 +1,142 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="https://kit.fontawesome.com/5f6562391a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Blackjack</h1>
+    <h1>BlackJack</h1>
+
     <p id="message-el">Want to play around?</p>
-    <p id="cards-el">Cards:</p>
-    <hr>
-    <p id="sum-el">Sum:</p>
-    <hr>
+
+ <!-- CARDS
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <p id="cards">✦ CARDS ✦</p>
+
+    <!-- <div class="marquee">
+        <div class="marquee_track">
+
+            <div class="marquee_content">
+                ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ 
+            </div>
+
+        </div>
+    </div> -->
+
+    <p id="cards-el"></p>
+
+    <!-- <div class="marquee">
+        <div class="marquee_track reverse">
+
+            <div class="marquee_content">
+                ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦ CARDS ✦
+
+            </div>
+
+        </div>
+    </div> -->
+
+<!-- SUM
+     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <p id="sum">&spades; SUM &spades; </p>
+
+        <p id="sum-el"></p>
+
+
+<!-- PLAYER
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <p id="player">&#9827; PLAYER & CHIPS &#9827; </p>
+    <div player-div>
+        <p id="player-el"></p>
+        <!-- <div class="dot_1">
+        </div> -->
+    </div>
+
+
+<!-- BUTTONS
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <button onclick="startGame()">START GAME</button>
     <button onclick="newCard()">NEW CARD</button>
-    <p id="player-el"></p>
+
+
+<!-- ANIMATION
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div class="loader">
+        <div class="tall-stack">
+          <div class="butter falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="plate">
+            <div class="plate-bottom"></div>
+            <div class="shadow"></div>
+          </div>
+        </div>
+      </div>
+
+ <!-- FOOTER
+        ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <footer>
+        <div class="rodape">
+            <div class="rodape_contactos">
+                <p>Contact</p>
+    
+                <ul>
+                    <li><i class="fa-solid fa-envelope"></i><a href="mailto:conchardr@gmail.com">info@conchardr.com</a></li>
+                    <li><i class="fa-solid fa-phone"></i>+351 966 336 333</li>
+
+                    <div class="icons">
+                        <a href="https://www.instagram.com/conchardreis" class="fa-brands fa-facebook-f"></a>
+                        <a href="https://www.instagram.com/conchardreis" class="fa-brands fa-instagram"></a>
+                        <a href="https://www.instagram.com/conchardreis" class="fa-brands fa-linkedin-in"></a>
+                        <a href="https://www.instagram.com/conchardreis" id="envelope" class="fa-solid fa-envelope"></a>
+                    </div>
+                </ul>
+    
+            </div>
+    
+            <div class="rodape_company">
+                <p>Company</p>
+    
+                <ul>
+                    <li><i class="fa-solid fa-book"></i><a href="shop.html">Rules</a></li>
+                    <li><i class="fa-solid fa-bolt"></i><a href="/about">About Us</a></li>
+                    <li><i class="fa-solid fa-question"></i><a href="">FAQS</a></li>
+                </ul>
+<!-- 
+                <div class="newsletter_rodape" id="news_rodape_1">
+                    <li><i class=" fa-solid fa-bell fa-shake "></i><a href="shop.html ">Subscribe here</a></li>
+                </div> -->
+            </div>
+    
+            <div class="rodape_connect">
+                <p>Payment</p>
+    
+                    
+                <ul>
+                    <li><i class="fa-solid fa-coins"></i><a href="shop.html">Wallet</a></li>
+                    <li><i class="fa-solid fa-hand-holding-dollar"></i><a href="/about">Sponsorships</a></li>
+                    <li><i class="fa-solid fa-money-check-dollar"></i><a href="">Payment Methods</a></li>
+                </ul>
+
+            </div>
+        </div>
+    
+        <div class="rodape_copy ">
+            <hr style="width:90% ">
+            <p><i class="fa-solid fa-copyright "></i>Copyrigh Concha Reis 2022 I <span id="terms">Terms &amp; Conditions</span></p>
+    
+        </div>
+    </footer>
+    <script src="index.js"></script>
 </body>
-<script src="index.js"></script>
 
 </html>
+
+
+
