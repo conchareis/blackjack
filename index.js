@@ -1,5 +1,5 @@
 let player = {
-    name: "Concha",
+    name: "Concha Reis",
     chips: 145,
 }
 
@@ -12,8 +12,14 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
+let cardName = document.getElementById("card-name")
+let balanceEl = document.getElementById("balance-el")
 
-playerEl.textContent = player.name + ": €" + player.chips
+// playerEl.textContent = player.name + ": €" + player.chips
+cardName.textContent = player.name
+
+const text = document.createTextNode(player.chips);
+balanceEl.appendChild(text)
 
 var imgArray = new Array();
 imgArray[0] = new Image();
@@ -102,7 +108,6 @@ function renderGame() {
 }
 
 function newCard() {
-    debugger
     if (isAlive === true && hasBlackJack === false) {
         let card = getRandomCard()
         sum += card
@@ -115,3 +120,12 @@ function newCard() {
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+! function(a) {
+    a(function() {
+        a(".button-sent #back").hide(), a(".button-sent #continue").click(function(b) {
+            a("#area .master-card").css("transform", "rotateY(180deg)"), a(".button-sent #back").show()
+        }), a(".button-sent #back").click(function(b) {
+            a("#area .master-card").css("transform", "rotateY(0deg)"), a(this).hide()
+        })
+    })
+}(jQuery);
