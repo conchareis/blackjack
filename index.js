@@ -15,6 +15,9 @@ let playerEl = document.getElementById("player-el")
 let cardName = document.getElementById("card-name")
 let balanceEl = document.getElementById("balance-el")
 
+let playing = ""
+let startPlaying = document.getElementById("start")
+
 // playerEl.textContent = player.name + ": €" + player.chips
 cardName.textContent = player.name
 
@@ -74,12 +77,24 @@ imgArray[12].src = 'css/img/nr13.png'
 
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1
-    if (randomNumber > 10) {
+    return randomNumber
+
+    // if (randomNumber >= 10) {
+    //     return 10
+    // } else if (randomNumber === 1) {
+    //     return 11
+    // } else {
+    //     return randomNumber
+    // }
+}
+
+function getCardValue(cardValue){
+    if (cardValue >= 10) {
         return 10
-    } else if (randomNumber === 1) {
+    } else if (cardValue === 1) {
         return 11
     } else {
-        return randomNumber
+        return cardValue
     }
 }
 
@@ -88,12 +103,14 @@ function startGame() {
     isAlive = true
     cards = [];
     cardsEl.innerHTML = '';
-    let firstCard = getRandomCard()
+    
+    let firstCard = getRandomCard()//12
     var realCard = imgArray[firstCard - 1];
     let secondCard = getRandomCard()
     var realCard2 = imgArray[secondCard - 1];
     cards = [realCard, realCard2]
-    sum = firstCard + secondCard
+
+    sum = getCardValue(firstCard) + getCardValue(secondCard)
     renderGame()
 }
 
@@ -106,9 +123,9 @@ function renderGame() {
     // sumEl.textContent = "Sum: " + sums
     sumEl.textContent = sum
     if (sum <= 20) {
-        message = ("Do you want to draw a new card?")
+        message = ("Do you want to draw a new card ?")
     } else if (sum === 21) {
-        message = ("You have got BlackJack!")
+        message = ("You have got BlackJack !")
         hasBlackJack = true
         newSpan.textContent = player.chips += 10;
     } else if (sum > 21) {
@@ -125,7 +142,7 @@ function renderGame() {
 function newCard() {
     if (isAlive === true && hasBlackJack === false) {
         let card = getRandomCard()
-        sum += card
+        sum += getCardValue(card)
         var realCard = imgArray[card - 1];
         cards.push(realCard)
         renderGame()
@@ -137,10 +154,39 @@ function newCard() {
 
 ! function(a) {
     a(function() {
-        a(".button-sent #back").hide(), a(".button-sent #continue").click(function(b) {
-            a("#area .master-card").css("transform", "rotateY(180deg)"), a(".button-sent #back").show()
-        }), a(".button-sent #back").click(function(b) {
-            a("#area .master-card").css("transform", "rotateY(0deg)"), a(this).hide()
+        a(".button-sent #front").hide(), 
+
+        a(".button-sent #back").click(function(b) {
+            a("#area .master-card").css("transform", "rotateY(180deg)"), 
+            a(".button-sent #front").show(), 
+            a(".button-sent #back").hide()
+        }), 
+
+        a(".button-sent #front").click(function(b) {
+            a("#area .master-card").css("transform", "rotateY(0deg)"), 
+            a(this).hide(), 
+            a(".button-sent #back").show()
         })
     })
 }(jQuery);
+
+
+
+! function(c) {
+    c(function() {
+        c("#card").hide(),
+        c("#cards").hide(),
+        c("#sum").hide(),
+        // startPlaying.style.backgroundColor = '#d04e68',
+        
+        c("#start").click(function(d) {
+            c("#card").show(), 
+            c("#start").show()
+            c("#cards").show(), 
+            c("#sum").show(),
+            playing = ("RESTART"),
+            startPlaying.textContent = playing
+        })
+    })
+}(jQuery);
+

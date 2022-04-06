@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/css/index.css">
     <script src="https://kit.fontawesome.com/5f6562391a.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -22,7 +23,7 @@
 
     <h1>BlackJack</h1>
 
-    <p id="message-el">Want to play around?</p>
+    <p id="message-el">Want to earn some Pancakes ?</p>
 
     <!-- CARDS
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
@@ -46,9 +47,9 @@
 
     <!-- BUTTONS
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-    <button onclick="startGame()">START GAME</button>
+    <button id="start" onclick="startGame()">START GAME</button>
 
-    <button onclick="newCard()">NEW CARD</button>
+    <button id="card" onclick="newCard()">NEW CARD</button>
 
     <!-- ANIMATION PANCAKE
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
@@ -138,11 +139,44 @@
 
         </div>
 
-        <div class="button-sent"><button id="back">FRONT</button><button id="continue">BACK</button>
+        <div class="button-sent" onclick="myFunction()">   
+            <button id="front">FRONT</button>
+            <button id="back">BACK</button>
         </div>
 
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="big_container">
+        <div class="container">
+            <div class="container_card">
+                <div class="face face1">
+                    <div class="content">
+                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true">
+                        <h3>Code</h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                            <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+ 
 
 
     <!-- FOOTER
