@@ -7,36 +7,36 @@
 </head>
 
 <body>
-<div class="marquee_div">
-    <div class="marquee">
-        <div class="marquee_track">
+    <div class="marquee_div">
+        <div class="marquee">
+            <div class="marquee_track">
 
-            <div class="marquee_content">
-                <span>✦ BLACKJACK </span> <span style="color:black"> &#9827; BLACKJACK </span><span><span>✦ BLACKJACK </span> <span style="color:black"> &#9827; BLACKJACK </span><span><span>✦ BLACKJACK </span> <span style="color:black"> &#9827; BLACKJACK </span><span><span>✦ BLACKJACK </span>
+                <div class="marquee_content">
+                    <span>✦ BLACKJACK </span> <span style="color:black"> &#9827; BLACKJACK </span><span><span>✦ BLACKJACK </span> <span style="color:black"> &#9827; BLACKJACK </span><span><span>✦ BLACKJACK </span> <span style="color:black"> &#9827; BLACKJACK </span><span><span>✦ BLACKJACK </span>                    <span style="color:black"> &#9827; </span>
+                </div>
+
             </div>
-
         </div>
     </div>
-</div>
 
 
     <h1>BlackJack</h1>
 
     <p id="message-el">Want to play around?</p>
 
- <!-- CARDS
+    <!-- CARDS
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <p id="cards">✦ CARDS ✦</p>
 
     <p id="cards-el"></p>
 
-<!-- SUM
+    <!-- SUM
      ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-        <p id="sum">&spades; SUM &spades; </p>
+    <p id="sum">&spades; SUM &spades; </p>
 
-        <p id="sum-el"></p>
+    <p id="sum-el"></p>
 
-<!-- PLAYER
+    <!-- PLAYER
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- <p id="player">&#9827; PLAYER & CHIPS &#9827; </p>
@@ -44,44 +44,47 @@
         <p id="player-el"></p>
     </div> -->
 
-<!-- BUTTONS
+    <!-- BUTTONS
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <button onclick="startGame()">START GAME</button>
 
     <button onclick="newCard()">NEW CARD</button>
 
-<!-- ANIMATION PANCAKE
+    <!-- ANIMATION PANCAKE
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div class="loader">
         <div class="tall-stack">
-          <div class="butter falling-element"></div>
-          <div class="pancake falling-element"></div>
-          <div class="pancake falling-element"></div>
-          <div class="pancake falling-element"></div>
-          <div class="pancake falling-element"></div>
-          <div class="pancake falling-element"></div>
-          <div class="pancake falling-element"></div>
-          <div class="plate">
-            <div class="plate-bottom"></div>
-            <div class="shadow"></div>
-          </div>
+            <div class="butter falling-element"></div>
+            <div class="pancake falling-element"></div>
+            <div class="pancake falling-element"></div>
+            <div class="pancake falling-element"></div>
+            <div class="pancake falling-element"></div>
+            <div class="pancake falling-element"></div>
+            <div class="pancake falling-element"></div>
+            <div class="plate">
+                <div class="plate-bottom"></div>
+                <div class="shadow"></div>
+            </div>
         </div>
-      </div>
+    </div>
 
-<!-- ANIMATION CHIPS CARD
+    <!-- ANIMATION CHIPS CARD
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-<div id="area">
-    
-    <p id="player" style="font-size:12px">&#9827; PLAYER & CHIPS &#9827; </p>
-    <div class="master-card">
+    <div id="area">
 
-        <div class="card">
-            <div class="title">CHIPS CARD<i class="fa-solid fa-credit-card" style="padding-left: 10px"></i></div>
-            <div class="input-number"><span class="title-number">CARD NUMBER</span>
-                <div class="inputs-number"><input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" name="number-card" placeholder="0000" required="required" /><input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" name="number-card" placeholder="0000" required="required" /><input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" name="number-card" placeholder="0000" required="required" /><input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" name="number-card" placeholder="0000" required="required" /></div>
-                <div class="selects-date selecters">
-                    <div class="day-select"><span style="padding-left:5px">MONTH</span><select id="dates">
+        <p id="player" style="font-size:13px">&#9827; PLAYER & CHIPS &#9827; </p>
+        <div class="master-card">
+
+            <div class="card">
+                <div class="title">CHIPS CARD<i class="fa-solid fa-credit-card" style="padding-left: 10px"></i></div>
+                <div class="input-number"><span class="title-number">CARD NUMBER</span>
+                    <div class="inputs-number"><input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" name="number-card" placeholder="0000" required="required" /><input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            maxlength="4" name="number-card" placeholder="0000" required="required" /><input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" name="number-card"
+                            placeholder="0000" required="required" /><input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" name="number-card" placeholder="0000" required="required"
+                        /></div>
+                    <div class="selects-date selecters">
+                        <div class="day-select"><span style="padding-left:5px">MONTH</span><select id="dates">
                             <option value="">01</option>
                             <option value="">02</option>
                             <option value="">03</option>
@@ -95,9 +98,9 @@
                             <option value="">11</option>
                             <option value="">12</option>
                         </select>
-                    </div>
+                        </div>
 
-                    <div class="year-select"><span>YEAR</span><select id="dates">
+                        <div class="year-select"><span>YEAR</span><select id="dates">
                             <option value="">22</option>
                             <option value="">23</option>
                             <option value="">24</option>
@@ -107,48 +110,48 @@
                             <option value="">28</option>
                             <option value="">29</option>
                         </select>
-                    </div>
+                        </div>
 
-                </div>
-            </div>
-
-            <div class="mark-gold">
-                <div class="round">
-                    <div class="circles">
-                        <div class="circle-1"> </div>
-                        <div class="circle-2"> </div>
                     </div>
                 </div>
+
+                <div class="mark-gold">
+                    <div class="round">
+                        <div class="circles">
+                            <div class="circle-1"> </div>
+                            <div class="circle-2"> </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="name" id="card-name"><span>JEAN O IMPSUM</span>
+                </div>
+
             </div>
 
-            <div class="name" id="card-name"><span>JEAN O IMPSUM</span>
+            <div class="card-back">
+                <div class="tire"></div>
+                <div class="secret-area"><input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="3" name="number-card" placeholder="000" required="required" /></div>
+                <div class="chip-card"></div>
+                <div class="balance-card" id="balance-el">BALANCE <i class="fa-solid fa-coins"></i></div>
             </div>
 
         </div>
 
-        <div class="card-back">
-            <div class="tire"></div>
-            <div class="secret-area"><input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="3" name="number-card" placeholder="000" required="required" /></div>
-            <div class="chip-card"></div>
-            <div class="balance-card" id="balance-el">BALANCE <i class="fa-solid fa-coins"></i></div>
+        <div class="button-sent"><button id="back">FRONT</button><button id="continue">BACK</button>
         </div>
 
     </div>
 
-    <div class="button-sent"><button id="back">FRONT</button><button id="continue">BACK</button>
-    </div>
-
-</div>
 
 
-
- <!-- FOOTER
+    <!-- FOOTER
         ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <footer>
         <div class="rodape">
             <div class="rodape_contactos">
                 <p>Contact</p>
-    
+
                 <ul>
                     <li><i class="fa-solid fa-envelope"></i><a href="mailto:conchardr@gmail.com">info@conchardr.com</a></li>
                     <li><i class="fa-solid fa-phone"></i>+351 966 336 333</li>
@@ -160,23 +163,23 @@
                         <a href="https://www.instagram.com/conchardreis" id="envelope" class="fa-solid fa-envelope"></a>
                     </div>
                 </ul>
-    
+
             </div>
-    
+
             <div class="rodape_company">
                 <p>Company</p>
-    
+
                 <ul>
                     <li><i class="fa-solid fa-book"></i><a href="shop.html">Rules</a></li>
                     <li><i class="fa-solid fa-bolt"></i><a href="/about">About Us</a></li>
                     <li><i class="fa-solid fa-question"></i><a href="">FAQS</a></li>
                 </ul>
             </div>
-    
+
             <div class="rodape_connect">
                 <p>Payment</p>
-    
-                    
+
+
                 <ul>
                     <li><i class="fa-solid fa-coins"></i><a href="shop.html">Wallet</a></li>
                     <li><i class="fa-solid fa-hand-holding-dollar"></i><a href="/about">Sponsorships</a></li>
@@ -185,17 +188,14 @@
 
             </div>
         </div>
-    
+
         <div class="rodape_copy ">
             <hr style="width:90% ">
             <p><i class="fa-solid fa-copyright "></i>Copyrigh Concha Reis 2022 I <span id="terms">Terms &amp; Conditions</span></p>
-    
+
         </div>
     </footer>
     <script src="index.js"></script>
 </body>
 
 </html>
-
-
-

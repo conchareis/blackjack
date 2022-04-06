@@ -1,8 +1,8 @@
 // COLORS
 
-@flamingo-pink: #d04e68; 
+@flamingo-pink: #d04e68;
 @bordo: #520e23;
-@cinza-background:#a59d9d;
+@cinza-background: #a59d9d;
 @cinza-escuro: rgb(99, 99, 99);
 
 body {
@@ -71,13 +71,17 @@ button {
   border: none;
   border-radius: 7px;
   background-color: @bordo;
-  color: @cinza-background;
+  // color: @cinza-background;
+  color: white;
   cursor: pointer;
   margin-top: 40px;
+  font-weight: bold;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
 
   &:hover {
     background-color: @cinza-background;
     color: @bordo;
+    box-shadow: none;
   }
 }
 
@@ -152,11 +156,10 @@ hr {
   letter-spacing: 0.3em;
   color: @bordo;
   margin-bottom: 5px;
-
 }
 
 footer {
-  background-color: rgba(  208, 78, 93, 1);
+  background-color: rgba(208, 78, 93, 1);
   border-radius: 20px;
   bottom: 0;
   margin: 20px;
@@ -230,9 +233,8 @@ footer {
 }
 
 #news_rodape_1 {
-    display: block;
+  display: block;
 }
-
 
 // PANCAKES ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -259,7 +261,7 @@ footer {
   animation-timing-function: ease;
 }
 .plate .plate-bottom {
-  content: '';
+  content: "";
   display: block;
   height: 50%;
   width: 140px;
@@ -279,7 +281,7 @@ footer {
   z-index: 0;
   width: 180px;
   height: 10px;
-  background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 80%;
   z-index: 0;
 }
@@ -289,14 +291,14 @@ footer {
   background: #eadd4d;
   margin: auto;
   border-radius: 2px;
-  box-shadow: inset 0 -2px 0 2px rgba(85, 74, 35, .1);
+  box-shadow: inset 0 -2px 0 2px rgba(85, 74, 35, 0.1);
 }
 .pancake {
   width: 200px;
   height: 14px;
   background: #d8cb9f;
   border-radius: 1rem;
-  box-shadow: inset 0 -2px 0 3px rgba(85, 74, 35, .1);
+  box-shadow: inset 0 -2px 0 3px rgba(85, 74, 35, 0.1);
   margin: auto;
 }
 .falling-element {
@@ -331,64 +333,75 @@ footer {
   animation-delay: 1.94s;
 }
 @keyframes element-drop {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(-100vh) scaleY(0.7);
     opacity: 1;
- }
+  }
   11% {
     transform: translateY(20%) scaleY(1.2);
- }
+  }
   13% {
     transform: translateY(-30%) scaleY(0.9);
- }
-  14%, 67% {
+  }
+  14%,
+  67% {
     transform: translateY(0%) scaleY(1);
     opacity: 1;
- }
+  }
   68% {
     opacity: 0;
     transition: none;
     transform: translateY(-100vh) scaleY(0.7);
- }
+  }
 }
 @keyframes slide-plate-in {
   0% {
     transform: translateX(100vw);
- }
-  15%, 100% {
+  }
+  15%,
+  100% {
     transform: translateX(0);
- }
+  }
 }
 @keyframes slide-plate-out {
   65% {
     transform: translateX(0);
- }
-  85%, 100% {
+  }
+  85%,
+  100% {
     transform: translateX(-100vw);
- }
+  }
 }
-
 
 // CARD ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
 
-input, select {
-  color: @bordo; }
-  input option, select option {
-    color: @bordo; }
+input,
+select {
+  color: @bordo;
+}
+input option,
+select option {
+  color: @bordo;
+}
 
 \::-webkit-input-placeholder {
-  color: @bordo; }
+  color: @bordo;
+}
 
 \::-moz-placeholder {
-  color: @bordo; }
+  color: @bordo;
+}
 
 \:-ms-input-placeholder {
-  color: @bordo; }
+  color: @bordo;
+}
 
 \:-moz-placeholder {
-  color: @bordo; }
+  color: @bordo;
+}
 
 #area {
   top: 140px;
@@ -398,282 +411,317 @@ input, select {
   flex-direction: column;
   position: absolute;
   right: 250px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
-  #area .master-card {
-    padding: 10px;
-    border-radius: 10px;
-    height: 150px;
-    max-height: 150px;
-    width: 250px;
-    position: relative;
-    transform-style: preserve-3d;
-    /*animation: rotate 5s infinite; */
-    animation-direction: normal;
-    transition: .5s;
-    transform: rotateY(0deg); }
+#area .master-card {
+  padding: 10px;
+  border-radius: 10px;
+  height: 150px;
+  max-height: 150px;
+  width: 250px;
+  position: relative;
+  transform-style: preserve-3d;
+  /*animation: rotate 5s infinite; */
+  animation-direction: normal;
+  transition: 0.5s;
+  transform: rotateY(0deg);
+}
 
-    #area .master-card .card {
-      padding: 10px;
-      border-radius: 10px;
-      position: absolute;
-      backface-visibility: hidden;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background: @cinza-escuro;
-      height: 170px;
-      max-height: 170px;
-      overflow: hidden;
-      width: 250px;
-      z-index: 2;
-      transform: rotateY(0deg); }
+#area .master-card .card {
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: @cinza-escuro;
+  height: 170px;
+  max-height: 170px;
+  overflow: hidden;
+  width: 250px;
+  z-index: 2;
+  transform: rotateY(0deg);
+}
 
-      #area .master-card .card .title {
-        border-bottom: 1px solid @bordo;
-        padding-bottom: 5px;
-        font-weight: bold;
-        // color: rgba(255, 255, 255, 0.5); 
-        color: @bordo;
-        text-align: left;
-        padding-left: 7px;
-      }
-        
+#area .master-card .card .title {
+  border-bottom: 1px solid @bordo;
+  padding-bottom: 5px;
+  font-weight: bold;
+  // color: rgba(255, 255, 255, 0.5);
+  color: @bordo;
+  text-align: left;
+  padding-left: 7px;
+}
 
-      #area .master-card .card .input-number .title-number {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.5); 
-        padding-right: 110px;
-      }
+#area .master-card .card .input-number .title-number {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  padding-right: 110px;
+}
 
-      #area .master-card .card .input-number .inputs-number {
-        display: flex; }
+#area .master-card .card .input-number .inputs-number {
+  display: flex;
+}
 
-        #area .master-card .card .input-number .inputs-number input {
-          color: @bordo;
-          border: none;
-          height: 15px;
-          width: 45px;
-          border-radius: 2px;
-          padding: 5px 4px;
-          text-align: center;
-          margin: 5px; 
-          background: rgba(255, 255, 255, 0.5);
-        }
+#area .master-card .card .input-number .inputs-number input {
+  color: @bordo;
+  border: none;
+  height: 15px;
+  width: 45px;
+  border-radius: 2px;
+  padding: 5px 4px;
+  text-align: center;
+  margin: 5px;
+  background: rgba(255, 255, 255, 0.5);
+}
 
-      #area .master-card .card .selects-date {
-        height: 40px;
-        margin-top: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: initial; }
+#area .master-card .card .selects-date {
+  height: 40px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: initial;
+}
 
-        #area .master-card .card .selects-date span {
-          color: rgba(255, 255, 255, 0.5); }
+#area .master-card .card .selects-date span {
+  color: rgba(255, 255, 255, 0.5);
+}
 
-        #area .master-card .card .selects-date .day-select span, #area .master-card .card .selects-date .year-select span {
-          display: block;
-          font-size: 12px;
-          color: rgba(255, 255, 255, 0.5); 
-          // padding-right: 7px;
-        }
+#area .master-card .card .selects-date .day-select span,
+#area .master-card .card .selects-date .year-select span {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  // padding-right: 7px;
+}
 
-        #area .master-card .card .selects-date select {
-          // color: rgba(255, 255, 255, 1);
-          color: @bordo;
-          border: none;
-          width: 50px;
-          height: 25px;
-          border-radius: 2px;
-          text-align: center;
-          margin: 5px;
-          margin-top: 0px;
-          background: rgba(255, 255, 255, 0.5);
-        }
+#area .master-card .card .selects-date select {
+  // color: rgba(255, 255, 255, 1);
+  color: @bordo;
+  border: none;
+  width: 50px;
+  height: 25px;
+  border-radius: 2px;
+  text-align: center;
+  margin: 5px;
+  margin-top: 0px;
+  background: rgba(255, 255, 255, 0.5);
+}
 
-      #area .master-card .card .mark-gold {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        border: solid 1px rgba(255, 255, 255, 0.5);
-        padding: 5px;
-        border-radius: 10px;
-        width: 40px;
-        height: 50px; }
+#area .master-card .card .mark-gold {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: solid 1px rgba(255, 255, 255, 0.5);
+  padding: 5px;
+  border-radius: 10px;
+  width: 40px;
+  height: 50px;
+}
 
-        #area .master-card .card .mark-gold .round .circles .circle-1 {
-          width: 40px;
-          height: 25px;
-          border-radius: 6px;
-          background: #ccc;
-          position: relative; }
+#area .master-card .card .mark-gold .round .circles .circle-1 {
+  width: 40px;
+  height: 25px;
+  border-radius: 6px;
+  background: #ccc;
+  position: relative;
+}
 
-          #area .master-card .card .mark-gold .round .circles .circle-1:after {
-            content: '';
-            width: 35px;
-            top: 2px;
-            left: 2px;
-            border-radius: 3px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.5);
-            position: absolute; }
+#area .master-card .card .mark-gold .round .circles .circle-1:after {
+  content: "";
+  width: 35px;
+  top: 2px;
+  left: 2px;
+  border-radius: 3px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+}
 
-          #area .master-card .card .mark-gold .round .circles .circle-1:before {
-            content: '';
-            width: 35px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 3px;
-            position: absolute;
-            bottom: 2px;
-            left: 2px; }
+#area .master-card .card .mark-gold .round .circles .circle-1:before {
+  content: "";
+  width: 35px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+}
 
-        #area .master-card .card .mark-gold .round .circles .circle-2 {
-          margin-top: 2px;
-          width: 40px;
-          height: 25px;
-          position: relative; }
+#area .master-card .card .mark-gold .round .circles .circle-2 {
+  margin-top: 2px;
+  width: 40px;
+  height: 25px;
+  position: relative;
+}
 
-          #area .master-card .card .mark-gold .round .circles .circle-2:after {
-            content: '';
-            width: 25px;
-            height: 25px;
-            border-radius: 15px;
-            background: @flamingo-pink;
-            position: absolute;
-            left: 0; }
+#area .master-card .card .mark-gold .round .circles .circle-2:after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background: @flamingo-pink;
+  position: absolute;
+  left: 0;
+}
 
-          #area .master-card .card .mark-gold .round .circles .circle-2:before {
-            content: '';
-            width: 25px;
-            height: 25px;
-            border-radius: 15px;
-            // background: #ff9d66;
-            background: @bordo;
-            position: absolute;
-            right: 0; }
+#area .master-card .card .mark-gold .round .circles .circle-2:before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  // background: #ff9d66;
+  background: @bordo;
+  position: absolute;
+  right: 0;
+}
 
-      #area .master-card .card .name {
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 14px;
-        padding: 10px 0; 
-        text-align: left;
-        padding-left: 7px;
-      }
+#area .master-card .card .name {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  padding: 10px 0;
+  text-align: left;
+  padding-left: 7px;
+}
 
-    #area .master-card .card-back {
-      padding: 10px;
-      border-radius: 10px;
-      position: absolute;
-      backface-visibility: hidden;
-      top: 0;
-      left: -35px;
-      bottom: 0;
-      right: 0;
-      background: @cinza-escuro;
-      height: 150px;
-      max-height: 150px;
-      width: 250px;
-      transform: rotateY(180deg); }
+#area .master-card .card-back {
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  backface-visibility: hidden;
+  top: 0;
+  left: -35px;
+  bottom: 0;
+  right: 0;
+  background: @cinza-escuro;
+  height: 150px;
+  max-height: 150px;
+  width: 250px;
+  transform: rotateY(180deg);
+}
 
-      #area .master-card .card-back .tire {
-        position: absolute;
-        width: 100%;
-        background: @bordo;
-        height: 35px;
-        top: 15px;
-        left: 0; }
+#area .master-card .card-back .tire {
+  position: absolute;
+  width: 100%;
+  background: @bordo;
+  height: 35px;
+  top: 15px;
+  left: 0;
+}
 
-      #area .master-card .card-back .secret-area {
-        position: absolute;
-        background: rgba(255, 255, 255, 0.5);
-        height: 30px;
-        top: 60px;
-        left: 20px;
-        // right: 20px;
-        border-radius: 3px; 
-        color: @bordo;
-      }
+#area .master-card .card-back .secret-area {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  height: 30px;
+  top: 60px;
+  left: 20px;
+  // right: 20px;
+  border-radius: 3px;
+  color: @bordo;
+}
 
-        #area .master-card .card-back .secret-area input {
-          background: transparent;
-          border: none;
-          height: 30px;
-          text-align: right;
-          padding: 0px 7px 0px 0px;
-          width: 220px; 
-          color: @bordo;
-        }
+#area .master-card .card-back .secret-area input {
+  background: transparent;
+  border: none;
+  height: 30px;
+  text-align: right;
+  padding: 0px 7px 0px 0px;
+  width: 220px;
+  color: @bordo;
+}
 
-        #area .master-card .card-back .secret-area span {
-          float: right;
-          margin: 5px;
-          color: @bordo;
-        }
+#area .master-card .card-back .secret-area span {
+  float: right;
+  margin: 5px;
+  color: @bordo;
+}
 
-      #area .master-card .card-back .chip-card {
-        width: 45px;
-        height: 35px;
-        background: rgba(255, 255, 255, 0.5);
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        border-top-right-radius: 10px !important;
-        border-radius: 5px; }
+#area .master-card .card-back .chip-card {
+  width: 45px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border-top-right-radius: 10px !important;
+  border-radius: 5px;
+}
 
-        #area .master-card .card-back .chip-card:after {
-          content: '';
-          width: 35px;
-          top: 5px;
-          left: 5px;
-          border-radius: 3px;
-          height: 10px;
-          background: @bordo;
-          position: absolute; }
+#area .master-card .card-back .chip-card:after {
+  content: "";
+  width: 35px;
+  top: 5px;
+  left: 5px;
+  border-radius: 3px;
+  height: 10px;
+  background: @bordo;
+  position: absolute;
+}
 
-        #area .master-card .card-back .chip-card:before {
-          content: '';
-          width: 35px;
-          height: 10px;
-          background: @flamingo-pink;
-          border-radius: 3px;
-          position: absolute;
-          bottom: 5px;
-          left: 5px; }
+#area .master-card .card-back .chip-card:before {
+  content: "";
+  width: 35px;
+  height: 10px;
+  background: @flamingo-pink;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
 
-  // #area .button-sent {
-  //   margin-top: 25px; }
+// #area .button-sent {
+//   margin-top: 25px; }
 
-    #area .button-sent button {
-      border-radius: 3px;
-      border: none;
-      font-size: 13px;
-      padding: 5px 10px;
-      background: @flamingo-pink;
-      color: white;
-      font-weight: bold;
-      box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
-      position: relative;
-      transition: .5s; }
+#area .button-sent button {
+  border-radius: 7px;
+  border: none;
+  font-size: 13px;
+  // padding: 5px 10px;
+  background: @flamingo-pink;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: 0.5s;
+  width: 150px;
+  height: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
 
-      #area .button-sent button:hover {
-        top: -1px;
-        cursor: pointer;
-        box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.2); }
+  &:hover {
+    background-color: @bordo;
+  }
+}
+
+#area .button-sent button:hover {
+  top: -1px;
+  cursor: pointer;
+  box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
 
 @keyframes rotate {
   from {
-    transform: rotateY(0deg); }
+    transform: rotateY(0deg);
+  }
   to {
-    transform: rotateY(360deg); } }
+    transform: rotateY(360deg);
+  }
+}
 
-
-    #card-name {
-      text-transform: uppercase;
-      font-size: 13px;
-    }
+#card-name {
+  text-transform: uppercase;
+  font-size: 13px;
+}
 
 .balance-card {
   position: absolute;
@@ -683,25 +731,28 @@ input, select {
   color: rgba(255, 255, 255, 0.5);
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: @bordo;
   opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: @bordo;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: @bordo;
 }
 
 input:focus {
   outline: none !important;
-  border:1px solid @flamingo-pink;
+  border: 1px solid @flamingo-pink;
   box-shadow: 0 0 10px @flamingo-pink;
 }
 
-input[type=number]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }

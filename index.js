@@ -1,6 +1,6 @@
 let player = {
     name: "Concha Reis",
-    chips: 145,
+    chips: 100,
 }
 
 let cards = []
@@ -19,7 +19,17 @@ let balanceEl = document.getElementById("balance-el")
 cardName.textContent = player.name
 
 const text = document.createTextNode(player.chips);
-balanceEl.appendChild(text)
+// balanceEl.appendChild(text)
+
+
+//create the DOM object
+var newSpan = document.createElement('span');
+// add the class to the 'spam'
+newSpan.setAttribute('id', 'balance-chips');
+newSpan.appendChild(text);
+
+balanceEl.appendChild(newSpan)
+
 
 var imgArray = new Array();
 imgArray[0] = new Image();
@@ -100,9 +110,14 @@ function renderGame() {
     } else if (sum === 21) {
         message = ("You have got BlackJack!")
         hasBlackJack = true
-    } else {
+        newSpan.textContent = player.chips += 10;
+    } else if (sum > 21) {
         message = ("You are out of the game.")
         isAlive = false
+            // balanceEl.innerTextContent = ""
+            // const text = document.createTextNode(player.chips -= 10);
+            // balanceEl.appendChild(text)
+        newSpan.textContent = player.chips -= 10;
     }
     messageEl.textContent = message
 }

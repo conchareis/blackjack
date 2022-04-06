@@ -45,7 +45,6 @@ h2 {
   margin-bottom: 20px;
 }
 button {
-  font-weight: bold;
   width: 150px;
   height: 25px;
   padding-top: 5px;
@@ -56,13 +55,16 @@ button {
   border: none;
   border-radius: 7px;
   background-color: #520e23;
-  color: #a59d9d;
+  color: white;
   cursor: pointer;
   margin-top: 40px;
+  font-weight: bold;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 button:hover {
   background-color: #a59d9d;
   color: #520e23;
+  box-shadow: none;
 }
 #message-el {
   font-family: "Montserrat", sans-serif;
@@ -222,7 +224,7 @@ footer a {
   animation-timing-function: ease;
 }
 .plate .plate-bottom {
-  content: '';
+  content: "";
   display: block;
   height: 50%;
   width: 140px;
@@ -367,7 +369,7 @@ select option {
   flex-direction: column;
   position: absolute;
   right: 250px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 #area .master-card {
   padding: 10px;
@@ -471,7 +473,7 @@ select option {
   position: relative;
 }
 #area .master-card .card .mark-gold .round .circles .circle-1:after {
-  content: '';
+  content: "";
   width: 35px;
   top: 2px;
   left: 2px;
@@ -481,7 +483,7 @@ select option {
   position: absolute;
 }
 #area .master-card .card .mark-gold .round .circles .circle-1:before {
-  content: '';
+  content: "";
   width: 35px;
   height: 5px;
   background: rgba(255, 255, 255, 0.5);
@@ -497,7 +499,7 @@ select option {
   position: relative;
 }
 #area .master-card .card .mark-gold .round .circles .circle-2:after {
-  content: '';
+  content: "";
   width: 25px;
   height: 25px;
   border-radius: 15px;
@@ -506,7 +508,7 @@ select option {
   left: 0;
 }
 #area .master-card .card .mark-gold .round .circles .circle-2:before {
-  content: '';
+  content: "";
   width: 25px;
   height: 25px;
   border-radius: 15px;
@@ -578,7 +580,7 @@ select option {
   border-radius: 5px;
 }
 #area .master-card .card-back .chip-card:after {
-  content: '';
+  content: "";
   width: 35px;
   top: 5px;
   left: 5px;
@@ -588,7 +590,7 @@ select option {
   position: absolute;
 }
 #area .master-card .card-back .chip-card:before {
-  content: '';
+  content: "";
   width: 35px;
   height: 10px;
   background: #d04e68;
@@ -598,16 +600,26 @@ select option {
   left: 5px;
 }
 #area .button-sent button {
-  border-radius: 3px;
   border: none;
   font-size: 13px;
-  padding: 5px 10px;
   background: #d04e68;
-  color: white;
   font-weight: bold;
   box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
   position: relative;
   transition: 0.5s;
+  width: 150px;
+  height: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+}
+#area .button-sent button:hover {
+  background-color: #520e23;
 }
 #area .button-sent button:hover {
   top: -1px;
@@ -652,6 +664,6 @@ input:focus {
   border: 1px solid #d04e68;
   box-shadow: 0 0 10px #d04e68;
 }
-input[type=number]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
