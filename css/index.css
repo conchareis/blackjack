@@ -1,3 +1,8 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 body {
   text-align: center;
   color: black;
@@ -59,7 +64,7 @@ button {
   background-color: #520e23;
   color: white;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 15px;
   font-weight: bold;
   box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
@@ -67,6 +72,10 @@ button:hover {
   background-color: #a59d9d;
   color: #520e23;
   box-shadow: none;
+}
+#back,
+#front {
+  margin-top: 40px;
 }
 #message-el {
   font-family: "Montserrat", sans-serif;
@@ -148,7 +157,7 @@ footer {
   flex: 100%;
   flex-wrap: wrap;
   position: fixed;
-  width: 97%;
+  width: 98%;
   color: #520e23;
 }
 footer p {
@@ -206,8 +215,8 @@ footer a {
 }
 .loader {
   position: absolute;
-  top: 60%;
-  left: 80%;
+  top: 64%;
+  right: 10vh;
   transform: translate(-50%, -50%);
 }
 .tall-stack {
@@ -371,7 +380,7 @@ select option {
   overflow: hidden;
   flex-direction: column;
   position: absolute;
-  right: 250px;
+  right: 20vh;
   font-family: "Ubuntu", sans-serif;
 }
 .master-card {
@@ -677,31 +686,79 @@ input[type="number"]::-webkit-inner-spin-button {
   display: none;
 }
 .big_container {
-  margin: 0;
+  left: 20vh;
   padding: 0;
   justify-content: center;
   align-items: center;
-  text-align: -webkit-center;
+  position: absolute;
+  top: 85px;
 }
-.big_container img {
-  width: 100;
-  height: 100;
+.big_container i {
+  color: white;
+  font-size: 80px;
+  padding: 0;
 }
 .container {
-  width: 1000px;
+  width: 300px;
   position: relative;
   justify-content: space-between;
 }
-.container .container_card {
+.container_card {
   position: relative;
   cursor: pointer;
 }
-.container .container_card .face {
-  width: 300px;
-  height: 200px;
+.container_card:hover .face.face2 {
+  transform: translateY(0);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.container_card:hover .face.face1 .content {
+  opacity: 1;
+}
+.container_card:hover .face.face1 {
+  background: #d04e68;
+  transform: translateY(0);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.container_card h3 {
+  margin: 20px 0 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.47em;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+}
+.container p {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+}
+.container a {
+  margin: 5px 0 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #333;
+  padding: 5px 12px;
+  border: 1px solid #333;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-radius: 8px;
+}
+.container a:hover {
+  background: #636363;
+  color: #fff;
+  border: none;
+}
+.face {
+  width: 280px;
+  height: 210px;
   transition: 0.5s;
 }
-.container .container_card .face.face1 {
+.face.face1 {
   position: relative;
   background: #333;
   display: flex;
@@ -709,56 +766,24 @@ input[type="number"]::-webkit-inner-spin-button {
   align-items: center;
   z-index: 1;
   transform: translateY(100px);
+  border-radius: 15px;
 }
-.container .container_card:hover .face.face1 {
-  background: #ff0057;
+.face.face1:hover .face.face2 {
   transform: translateY(0);
 }
-.container .container_card .face.face1 .content {
-  opacity: 0.2;
-  transition: 0.5s;
-}
-.container .container_card:hover .face.face1 .content {
-  opacity: 1;
-}
-.container .container_card .face.face1 .content img {
-  max-width: 100px;
-}
-.container .container_card .face.face1 .content h3 {
-  margin: 10px 0 0;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-  font-size: 1.5em;
-}
-.container .container_card .face.face2 {
+.face.face2 {
   position: relative;
-  background: #fff;
+  background: white;
   justify-content: center;
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-  transform: translateY(-100px);
-  height: 250px;
+  transform: translateY(-110px);
+  height: 210px;
+  border-radius: 15px;
 }
-.container .container_card:hover .face.face2 {
-  transform: translateY(0);
-}
-.container .container_card .face.face2 .content p {
-  margin: 0;
-  padding: 0;
-}
-.container .container_card .face.face2 .content a {
-  margin: 15px 0 0;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 900;
-  color: #333;
-  padding: 5px;
-  border: 1px solid #333;
-}
-.container .container_card .face.face2 .content a:hover {
-  background: #333;
-  color: #fff;
+content {
+  opacity: 0.2;
+  transition: 0.5s;
 }

@@ -14,6 +14,7 @@ let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
 let cardName = document.getElementById("card-name")
 let balanceEl = document.getElementById("balance-el")
+let containerEl = document.getElementById("container")
 
 let playing = ""
 let startPlaying = document.getElementById("start")
@@ -185,8 +186,11 @@ function newCard() {
             c("#cards").show(), 
             c("#sum").show(),
             playing = ("RESTART"),
-            startPlaying.textContent = playing
+            startPlaying.textContent = playing,
+            // containerEl.style.bottom = 582
+           startPlaying.style.marginTop = '80px'
         })
     })
 }(jQuery);
 
+// Quando as chips sao 0 o jogador fica fora de jogo - mostra uma mensagem ou algo assim
