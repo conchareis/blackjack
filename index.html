@@ -8,6 +8,9 @@
 </head>
 
 <body>
+    <div id="page-container">
+        <div id="content-wrap">
+
     <div class="marquee_div">
         <div class="marquee">
             <div class="marquee_track">
@@ -37,14 +40,6 @@
 
     <p id="sum-el"></p>
 
-    <!-- PLAYER
-    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-
-    <!-- <p id="player">&#9827; PLAYER & CHIPS &#9827; </p>
-    <div player-div>
-        <p id="player-el"></p>
-    </div> -->
-
     <!-- BUTTONS
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <button id="start" onclick="startGame()">START GAME</button>
@@ -53,8 +48,9 @@
 
     <!-- ANIMATION PANCAKE
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-    <div class="loader">
+    <div class="loader tooltip">
         <div class="tall-stack">
+            <span class="tooltiptext">Click me for some fun Recipes !</span>
             <div class="butter falling-element"></div>
             <div class="pancake falling-element"></div>
             <div class="pancake falling-element"></div>
@@ -139,7 +135,7 @@
 
         </div>
 
-        <div class="button-sent" onclick="myFunction()">   
+        <div class="button-sent">   
             <button id="front">FRONT</button>
             <button id="back">BACK</button>
         </div>
@@ -184,7 +180,7 @@
 
                 <ul>
                     <li><i class="fa-solid fa-envelope"></i><a href="mailto:conchardr@gmail.com">info@conchardr.com</a></li>
-                    <li><i class="fa-solid fa-phone"></i>+351 966 336 333</li>
+                    <li><i class="fa-solid fa-phone"></i><span id="phone">+351 966 336 333</span></li>
 
                     <div class="icons">
                         <a href="https://www.instagram.com/conchardreis" class="fa-brands fa-facebook-f"></a>
@@ -221,11 +217,14 @@
 
         <div class="rodape_copy ">
             <hr style="width:90% ">
-            <p><i class="fa-solid fa-copyright "></i>Copyrigh Concha Reis 2022 I <span id="terms">Terms &amp; Conditions</span></p>
+            <p><i class="fa-solid fa-copyright"></i><span id="copyright">Copyrigh Concha Reis 2022 I </span><span id="terms">Terms &amp; Conditions</span></p>
+
+        </div>
 
         </div>
     </footer>
     <script src="index.js"></script>
+</div>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 let player = {
     name: "Concha Reis",
-    chips: 100,
+    chips: 50,
 }
 
 let cards = []
@@ -117,8 +117,14 @@ function startGame() {
 
 function renderGame() {
     // cardsEl.textContent = "Cards: "
+    cardsEl.innerHTML = '';
+
     for (let i = 0; i < cards.length; i++) {
-        cardsEl.appendChild(cards[i])
+        var node = cards[i];
+        var clone = node.cloneNode(true);
+        cardsEl.appendChild(clone);
+
+        // console.log('Card:' + cards[i].src);
     }
 
     // sumEl.textContent = "Sum: " + sums
@@ -131,14 +137,29 @@ function renderGame() {
         newSpan.textContent = player.chips += 10;
     } else if (sum > 21) {
         message = ("You are out of the game.")
+        message = ("Try again.")
         isAlive = false
             // balanceEl.innerTextContent = ""
             // const text = document.createTextNode(player.chips -= 10);
             // balanceEl.appendChild(text)
         newSpan.textContent = player.chips -= 10;
     }
+
+    // console.log('Sum:' + sum);
+    // console.log('Chips:' + player.chips);
+    // console.log('Alive:' + isAlive);
+
+    // console.log('BlackJ:' + hasBlackJack);
+
+        
+    if (player.chips <= 0) {
+        message = ("Ups, you're out of Pancakes");
+        $("#card").hide()
+    }
+
     messageEl.textContent = message
 }
+
 
 function newCard() {
     if (isAlive === true && hasBlackJack === false) {
@@ -188,9 +209,25 @@ function newCard() {
             playing = ("RESTART"),
             startPlaying.textContent = playing,
             // containerEl.style.bottom = 582
-           startPlaying.style.marginTop = '80px'
+           startPlaying.style.marginTop = '60px'
         })
     })
 }(jQuery);
 
-// Quando as chips sao 0 o jogador fica fora de jogo - mostra uma mensagem ou algo assim
+// Quando as chips sao 0 o jogador fica fora de jogo - mostra uma mensagem ou algo assim e botao diz try again 
+
+
+
+var balanceChips = document.getElementById("balance-chips")
+
+! function(e) {
+    e(function() {
+    if (balanceChips.value === '0') {
+            message = ("Ups, you're out of Pancakes"),
+            e("#card").hide(),
+            messageEl.textContent = message
+        }
+    })
+}(jQuery);
+
+

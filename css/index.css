@@ -1,9 +1,12 @@
+/* Colors ---------------------------------------------------*/
+/* Grid Breakpoints ---------------------------------------------------*/
+/* GLOBAL STYLES
+----------------------------------------------------------*/
 html,
 body {
   margin: 0;
   padding: 0;
 }
-/* ----------------------------------------------------------*/
 body {
   text-align: center;
   color: black;
@@ -16,7 +19,14 @@ body {
   width: 100%;
   background-color: #a59d9d;
   overflow-x: hidden;
-  overflow-y: hidden;
+}
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+#content-wrap {
+  padding-bottom: 14.5rem;
 }
 img {
   height: 250px;
@@ -43,9 +53,15 @@ h1 {
   font-family: "Playfair Display", serif;
   letter-spacing: 1.47em;
   color: #520e23;
+  line-break: anywhere;
 }
 h1:hover {
   color: #d04e68;
+}
+@media (max-width: 1199.98px) {
+  h1 {
+    font-size: 28px;
+  }
 }
 h2 {
   font-size: 50px;
@@ -57,7 +73,7 @@ button {
   height: 25px;
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-bottom: 2px;
+  margin-bottom: 20px;
   margin-right: 10px;
   margin-left: 10px;
   border: none;
@@ -73,55 +89,6 @@ button:hover {
   background-color: #a59d9d;
   color: #520e23;
   box-shadow: none;
-}
-#back,
-#front {
-  margin-top: 40px;
-}
-#message-el {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 2.4em;
-  letter-spacing: 0.35em;
-  color: #520e23;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-hr {
-  font-weight: 3px;
-  width: 10%;
-  color: #520e23;
-}
-.marquee,
-#cards,
-#sum,
-#player {
-  font-family: abril-fatface, serif;
-  font-weight: 300;
-  font-size: 20px;
-  position: relative;
-  height: 30px;
-  letter-spacing: 0.3em;
-  color: #d04e68;
-  margin-bottom: 5px;
-}
-.marquee_track,
-#cards_track,
-#sum_track,
-#player_track {
-  white-space: nowrap;
-  will-change: transform;
-  max-width: 100%;
-  -moz-animation: marquee 30s linear infinite;
-  -webkit-animation: marquee 30s linear infinite;
-  animation: marquee 30s linear infinite;
-}
-.marquee .reverse,
-#cards .reverse,
-#sum .reverse,
-#player .reverse {
-  animation-direction: reverse;
 }
 .marquee_div {
   background-color: #636363;
@@ -139,16 +106,6 @@ hr {
     transform: translateX(-100%);
   }
 }
-#player-el {
-  font-family: abril-fatface, serif;
-  font-weight: 300;
-  font-size: 18px;
-  position: relative;
-  height: 30px;
-  letter-spacing: 0.3em;
-  color: #520e23;
-  margin-bottom: 5px;
-}
 footer {
   background-color: #d04e68;
   border-radius: 20px;
@@ -157,7 +114,7 @@ footer {
   display: flex;
   flex: 100%;
   flex-wrap: wrap;
-  position: fixed;
+  position: absolute;
   width: -webkit-fill-available;
   color: #520e23;
 }
@@ -166,6 +123,15 @@ footer p {
 }
 footer a {
   color: #520e23;
+}
+footer a:hover {
+  color: white;
+}
+footer li:hover {
+  color: white;
+}
+footer ul {
+  padding: 0px;
 }
 .rodape {
   width: 100%;
@@ -196,9 +162,6 @@ footer a {
   text-align: center;
   width: 33%;
 }
-.rodape_contactos ul {
-  padding: 0px;
-}
 @media (max-width: 575.98px) {
   .rodape_contactos {
     width: 35%;
@@ -215,19 +178,13 @@ footer a {
     font-size: 6px;
   }
 }
-.rodape_contactos li:hover {
-  color: #636363;
-}
 .rodape_contactos address:hover {
-  color: #636363;
+  color: white;
 }
 .rodape_company {
   display: inline-block;
   text-align: center;
   width: 28%;
-}
-.rodape_company ul {
-  padding: 0px;
 }
 @media (max-width: 575.98px) {
   .rodape_company i {
@@ -244,9 +201,6 @@ footer a {
     font-size: 6px;
   }
 }
-.rodape_company li:hover {
-  color: #636363;
-}
 .rodape_company a:hover {
   text-decoration: line-through;
 }
@@ -255,13 +209,13 @@ footer a {
   text-align: center;
   width: 33%;
 }
-.rodape_connect ul {
-  padding: 0px;
-}
 @media (max-width: 575.98px) {
   .rodape_connect {
     width: 36%;
   }
+}
+.rodape_connect a:hover {
+  text-decoration: line-through;
 }
 @media (max-width: 575.98px) {
   .rodape p {
@@ -279,15 +233,39 @@ footer a {
   display: block;
 }
 #terms:hover {
-  color: #636363;
+  color: white;
   cursor: pointer;
   text-decoration: line-through;
+}
+#copyright:hover {
+  cursor: pointer;
+  color: #a59d9d;
+}
+#phone:hover {
+  cursor: pointer;
 }
 .loader {
   position: absolute;
   top: 64%;
-  right: 10vh;
+  right: -22vh;
   transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 99;
+  padding-bottom: 15px;
+  padding-right: 195px;
+  border: 1px solid none;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+}
+.loader:hover {
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+@media (max-width: 1199.98px) {
+  .loader {
+    right: -13vh;
+    padding-right: 60px;
+  }
 }
 .tall-stack {
   animation: slide-plate-out 6000ms infinite;
@@ -305,6 +283,12 @@ footer a {
   animation-fill-mode: forwards;
   animation-timing-function: ease;
 }
+@media (max-width: 1199.98px) {
+  .plate {
+    width: 195px;
+    height: 9px;
+  }
+}
 .plate .plate-bottom {
   content: "";
   display: block;
@@ -317,6 +301,11 @@ footer a {
   margin-left: -70px;
   border-radius: 0 0 1rem 1rem;
   z-index: 1;
+}
+@media (max-width: 1199.98px) {
+  .plate .plate-bottom {
+    height: 53%;
+  }
 }
 .plate .shadow {
   position: absolute;
@@ -337,6 +326,12 @@ footer a {
   border-radius: 2px;
   box-shadow: inset 0 -2px 0 2px rgba(85, 74, 35, 0.1);
 }
+@media (max-width: 1199.98px) {
+  .butter {
+    width: 30px;
+    height: 5px;
+  }
+}
 .pancake {
   width: 200px;
   height: 14px;
@@ -344,6 +339,12 @@ footer a {
   border-radius: 1rem;
   box-shadow: inset 0 -2px 0 3px rgba(85, 74, 35, 0.1);
   margin: auto;
+}
+@media (max-width: 1199.98px) {
+  .pancake {
+    width: 170px;
+    height: 10px;
+  }
 }
 .falling-element {
   transform: translateY(-100vh);
@@ -444,7 +445,7 @@ select option {
   color: #520e23;
 }
 #area {
-  top: 140px;
+  top: 170px;
   height: 100vh;
   align-items: center;
   overflow: hidden;
@@ -452,6 +453,68 @@ select option {
   position: absolute;
   right: 20vh;
   font-family: "Ubuntu", sans-serif;
+}
+@media (max-width: 1199.98px) {
+  #area {
+    top: 181px;
+    right: 5vh;
+  }
+}
+#back,
+#front {
+  margin-top: 40px;
+}
+#message-el {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 2.4em;
+  letter-spacing: 0.35em;
+  color: #520e23;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+hr {
+  font-weight: 3px;
+  width: 10%;
+  color: #520e23;
+}
+.marquee,
+#cards,
+#sum,
+#player {
+  font-family: abril-fatface, serif;
+  font-weight: 300;
+  font-size: 20px;
+  position: relative;
+  height: 30px;
+  letter-spacing: 0.3em;
+  color: #d04e68;
+  margin-bottom: 5px;
+}
+.marquee_track,
+#cards_track,
+#sum_track,
+#player_track {
+  white-space: nowrap;
+  will-change: transform;
+  max-width: 100%;
+  -moz-animation: marquee 30s linear infinite;
+  -webkit-animation: marquee 30s linear infinite;
+  animation: marquee 30s linear infinite;
+}
+.marquee .reverse,
+#cards .reverse,
+#sum .reverse,
+#player .reverse {
+  animation-direction: reverse;
+}
+@media (max-width: 1199.98px) {
+  #cards-el {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .master-card {
   padding: 10px;
@@ -755,23 +818,49 @@ input[type="number"]::-webkit-inner-spin-button {
 .hidden {
   display: none;
 }
+#player-el {
+  font-family: abril-fatface, serif;
+  font-weight: 300;
+  font-size: 18px;
+  position: relative;
+  height: 30px;
+  letter-spacing: 0.3em;
+  color: #520e23;
+  margin-bottom: 5px;
+}
 .big_container {
   left: 20vh;
   padding: 0;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 85px;
+  top: 160px;
 }
 .big_container i {
   color: white;
   font-size: 80px;
   padding: 0;
 }
+@media (max-width: 1199.98px) {
+  .big_container i {
+    font-size: 70px;
+  }
+}
+@media (max-width: 1199.98px) {
+  .big_container {
+    left: 5vh;
+    top: 180px;
+  }
+}
 .container {
   width: 300px;
   position: relative;
   justify-content: space-between;
+}
+@media (max-width: 1199.98px) {
+  .container {
+    width: 250px;
+  }
 }
 .container_card {
   position: relative;
@@ -801,10 +890,20 @@ input[type="number"]::-webkit-inner-spin-button {
   font-family: "Ubuntu", sans-serif;
   font-weight: bold;
 }
+@media (max-width: 1199.98px) {
+  .container_card h3 {
+    font-size: 15px;
+  }
+}
 .container p {
   margin: 0;
   padding: 0;
   font-size: 11px;
+}
+@media (max-width: 1199.98px) {
+  .container p {
+    font-size: 9px;
+  }
 }
 .container a {
   margin: 5px 0 0;
@@ -823,10 +922,22 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #fff;
   border: none;
 }
+@media (max-width: 1199.98px) {
+  .container a {
+    padding: 2px 10px;
+    font-size: 9px;
+  }
+}
 .face {
   width: 280px;
   height: 210px;
   transition: 0.5s;
+}
+@media (max-width: 1199.98px) {
+  .face {
+    width: 250px;
+    height: 190px;
+  }
 }
 .face.face1 {
   position: relative;
@@ -853,7 +964,40 @@ input[type="number"]::-webkit-inner-spin-button {
   height: 210px;
   border-radius: 15px;
 }
-content {
+@media (max-width: 1199.98px) {
+  .face.face2 {
+    height: 190px;
+    transform: translateY(-90px);
+    padding: 10px;
+  }
+}
+.face content {
   opacity: 0.2;
-  transition: 0.5s;
+  transition: 0.3s;
+}
+/* Tooltip container */
+.tooltip {
+  display: inline-block;
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+  font-size: 9px;
+  visibility: hidden;
+  width: 99px;
+  background-color: #520e23;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 30px;
+  bottom: -5px;
+  right: -140px;
+  padding: 9px;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.loader:hover .tooltiptext {
+  visibility: visible;
 }
