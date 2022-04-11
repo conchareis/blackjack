@@ -1,6 +1,6 @@
 let player = {
     name: "Concha Reis",
-    chips: 50,
+    chips: 20,
 }
 
 let cards = []
@@ -15,6 +15,7 @@ let playerEl = document.getElementById("player-el")
 let cardName = document.getElementById("card-name")
 let balanceEl = document.getElementById("balance-el")
 let containerEl = document.getElementById("container")
+let newGameEl = document.getElementById("new_game")
 
 let playing = ""
 let startPlaying = document.getElementById("start")
@@ -89,7 +90,7 @@ function getRandomCard() {
     // }
 }
 
-function getCardValue(cardValue){
+function getCardValue(cardValue) {
     if (cardValue >= 10) {
         return 10
     } else if (cardValue === 1) {
@@ -102,10 +103,11 @@ function getCardValue(cardValue){
 
 function startGame() {
     isAlive = true
+    hasBlackJack = false
     cards = [];
     cardsEl.innerHTML = '';
-    
-    let firstCard = getRandomCard()//12
+
+    let firstCard = getRandomCard() //12
     var realCard = imgArray[firstCard - 1];
     let secondCard = getRandomCard()
     var realCard2 = imgArray[secondCard - 1];
@@ -123,8 +125,6 @@ function renderGame() {
         var node = cards[i];
         var clone = node.cloneNode(true);
         cardsEl.appendChild(clone);
-
-        // console.log('Card:' + cards[i].src);
     }
 
     // sumEl.textContent = "Sum: " + sums
@@ -145,16 +145,14 @@ function renderGame() {
         newSpan.textContent = player.chips -= 10;
     }
 
-    // console.log('Sum:' + sum);
-    // console.log('Chips:' + player.chips);
-    // console.log('Alive:' + isAlive);
-
-    // console.log('BlackJ:' + hasBlackJack);
-
-        
     if (player.chips <= 0) {
         message = ("Ups, you're out of Pancakes");
-        $("#card").hide()
+        $("#card").hide();
+        $("#start").hide();
+        $("#new_game").show();
+        // playing = ("NEW GAME");
+        // startPlaying.textContent = playing;
+        // newGameEl.style.display = block;
     }
 
     messageEl.textContent = message
@@ -171,24 +169,37 @@ function newCard() {
     }
 }
 
+function newGame() {
+    player.chips = 20;
+
+    newSpan.textContent = player.chips;
+    $("#card").show();
+    $("#start").show();
+    $("#new_game").hide();
+    message = ("Do you want to draw a new card ?");
+    messageEl.textContent = message;
+
+    startGame();
+}
+
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ! function(a) {
     a(function() {
-        a(".button-sent #front").hide(), 
+        a(".button-sent #front").hide(),
 
-        a(".button-sent #back").click(function(b) {
-            a("#area .master-card").css("transform", "rotateY(180deg)"), 
-            a(".button-sent #front").show(), 
-            a(".button-sent #back").hide()
-        }), 
+            a(".button-sent #back").click(function(b) {
+                a("#area .master-card").css("transform", "rotateY(180deg)"),
+                    a(".button-sent #front").show(),
+                    a(".button-sent #back").hide()
+            }),
 
-        a(".button-sent #front").click(function(b) {
-            a("#area .master-card").css("transform", "rotateY(0deg)"), 
-            a(this).hide(), 
-            a(".button-sent #back").show()
-        })
+            a(".button-sent #front").click(function(b) {
+                a("#area .master-card").css("transform", "rotateY(0deg)"),
+                    a(this).hide(),
+                    a(".button-sent #back").show()
+            })
     })
 }(jQuery);
 
@@ -197,37 +208,33 @@ function newCard() {
 ! function(c) {
     c(function() {
         c("#card").hide(),
-        c("#cards").hide(),
-        c("#sum").hide(),
-        // startPlaying.style.backgroundColor = '#d04e68',
-        
-        c("#start").click(function(d) {
-            c("#card").show(), 
-            c("#start").show()
-            c("#cards").show(), 
-            c("#sum").show(),
-            playing = ("RESTART"),
-            startPlaying.textContent = playing,
-            // containerEl.style.bottom = 582
-           startPlaying.style.marginTop = '60px'
-        })
-    })
-}(jQuery);
+            c("#cards").hide(),
+            c("#sum").hide(),
+            // startPlaying.style.backgroundColor = '#d04e68',
 
-// Quando as chips sao 0 o jogador fica fora de jogo - mostra uma mensagem ou algo assim e botao diz try again 
-
-
-
-var balanceChips = document.getElementById("balance-chips")
-
-! function(e) {
-    e(function() {
-    if (balanceChips.value === '0') {
-            message = ("Ups, you're out of Pancakes"),
-            e("#card").hide(),
-            messageEl.textContent = message
-        }
+            c("#start").click(function(d) {
+                c("#card").show(),
+                    c("#start").show()
+                c("#cards").show(),
+                    c("#sum").show(),
+                    playing = ("RESTART"),
+                    startPlaying.textContent = playing,
+                    // containerEl.style.bottom = 582
+                    startPlaying.style.marginTop = '60px'
+            })
     })
 }(jQuery);
 
 
+
+// var balanceChips = document.getElementById("balance-chips")
+
+
+//     e(function() {
+//         if (balanceChips.value === '0') {
+//             message = ("Ups, you're out of Pancakes"),
+//                 e("#card").hide(),
+//                 messageEl.textContent = message
+//         }
+//     })
+// }(jQuery);

@@ -267,6 +267,11 @@ footer ul {
     padding-right: 60px;
   }
 }
+@media (max-width: 1999.98px) {
+  .loader {
+    right: -26vh;
+  }
+}
 .tall-stack {
   animation: slide-plate-out 6000ms infinite;
   animation-fill-mode: forwards;
