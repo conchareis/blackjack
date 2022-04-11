@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
 }
+/* ----------------------------------------------------------*/
 body {
   text-align: center;
   color: black;
@@ -149,7 +150,7 @@ hr {
   margin-bottom: 5px;
 }
 footer {
-  background-color: #d04e5d;
+  background-color: #d04e68;
   border-radius: 20px;
   bottom: 0;
   margin: 20px;
@@ -157,7 +158,7 @@ footer {
   flex: 100%;
   flex-wrap: wrap;
   position: fixed;
-  width: 98%;
+  width: -webkit-fill-available;
   color: #520e23;
 }
 footer p {
@@ -180,6 +181,16 @@ footer a {
   flex-wrap: wrap;
   text-align: center;
 }
+@media (max-width: 575.98px) {
+  .rodape_copy {
+    font-size: 8px;
+  }
+}
+@media (max-width: 575.98px) {
+  .rodape_copy i {
+    font-size: 8px;
+  }
+}
 .rodape_contactos {
   display: inline-block;
   text-align: center;
@@ -187,6 +198,28 @@ footer a {
 }
 .rodape_contactos ul {
   padding: 0px;
+}
+@media (max-width: 575.98px) {
+  .rodape_contactos {
+    width: 35%;
+    height: 50%;
+  }
+}
+@media (max-width: 575.98px) {
+  .rodape_contactos i {
+    font-size: 7px;
+  }
+}
+@media (max-width: 575.98px) {
+  .rodape_contactos li {
+    font-size: 6px;
+  }
+}
+.rodape_contactos li:hover {
+  color: #636363;
+}
+.rodape_contactos address:hover {
+  color: #636363;
 }
 .rodape_company {
   display: inline-block;
@@ -196,6 +229,27 @@ footer a {
 .rodape_company ul {
   padding: 0px;
 }
+@media (max-width: 575.98px) {
+  .rodape_company i {
+    font-size: 7px;
+  }
+}
+@media (max-width: 575.98px) {
+  .rodape_company {
+    width: 25%;
+  }
+}
+@media (max-width: 575.98px) {
+  .rodape_company li {
+    font-size: 6px;
+  }
+}
+.rodape_company li:hover {
+  color: #636363;
+}
+.rodape_company a:hover {
+  text-decoration: line-through;
+}
 .rodape_connect {
   display: inline-block;
   text-align: center;
@@ -203,6 +257,17 @@ footer a {
 }
 .rodape_connect ul {
   padding: 0px;
+}
+@media (max-width: 575.98px) {
+  .rodape_connect {
+    width: 36%;
+  }
+}
+@media (max-width: 575.98px) {
+  .rodape p {
+    font-size: 9px;
+    line-height: 18px;
+  }
 }
 .icons {
   font-size: 17px;
@@ -212,6 +277,11 @@ footer a {
 }
 #news_rodape_1 {
   display: block;
+}
+#terms:hover {
+  color: #636363;
+  cursor: pointer;
+  text-decoration: line-through;
 }
 .loader {
   position: absolute;
@@ -344,7 +414,7 @@ footer a {
   }
   85%,
   100% {
-    transform: translateX(-100vw);
+    transform: translateX(100vw);
   }
 }
 @font-face {
